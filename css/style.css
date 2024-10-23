@@ -26,7 +26,6 @@ picture,
 video,
 canvas,
 svg {
-  max-width: 100%;
   display: block;
 }
 
@@ -41,6 +40,172 @@ select {
 
 body {
   min-height: 100vh;
-  font-size: 16px;
+  font-family: var(--ff-josefin-sans);
+  font-size: 1rem;
+  font-weight: var(--fw-400);
   line-height: 1.5;
+}
+
+.header {
+  padding: 1.875rem;
+  grid-area: header;
+}
+
+.header img {
+  width: 6.25rem;
+  height: auto;
+}
+
+.hero-image {
+  grid-area: hero;
+}
+
+.hero-image img {
+  width: 100%;
+}
+
+.main {
+  padding: 1.875rem;
+  margin-top: 2.1875rem;
+  grid-area: main;
+}
+
+.text-content {
+  text-align: center;
+}
+
+.text-content h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6rem;
+  line-height: 1.1;
+  color: var(--clr-dark-grayish-red);
+}
+
+.text-content .red-text {
+  color: var(--clr-desaturated-red);
+  font-weight: var(--fw-300);
+}
+
+.text-content p {
+  font-size: 0.875rem;
+  color: var(--clr-desaturated-red);
+  margin-top: 0.9375rem;
+  margin-bottom: 1.875rem;
+}
+
+.form {
+  position: relative;
+}
+
+input[type='email'] {
+  width: 100%;
+  padding: 0.9375rem 1.875rem;
+  outline: none;
+  border: 1px solid hsla(0, 36%, 70%, 0.4);
+  border-radius: 2.5rem;
+  background: transparent;
+}
+
+input[type='email']::placeholder {
+  font-size: 0.875rem;
+  color: var(--clr-desaturated-red);
+}
+
+.error-icon {
+  position: absolute;
+  top: 0.875rem;
+  right: 4.875rem;
+  opacity: 0;
+}
+
+.error-message {
+  font-size: 0.875rem;
+  color: var(--clr-soft-red);
+  margin-left: 1.9375rem;
+  margin-top: 0.625rem;
+}
+
+input[type='email'].error-border {
+  border-color: var(--clr-soft-red);
+}
+
+.btn-submit {
+  padding: 0.9375rem 1.75rem;
+  border-radius: 2.5rem;
+  background: var(--gradient-2);
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  box-shadow: 0 17px 20px -8px hsla(0, 36%, 70%, 0.8);
+}
+
+.btn-submit:hover {
+  opacity: 0.7;
+}
+
+@media screen and (min-width: 48rem) {
+  .main {
+    padding: 9.375rem;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 42.4%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      'header hero'
+      'main hero';
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-color: var(--gradient-1);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .hero-image img {
+    height: 100vh;
+  }
+
+  .header img {
+    width: 158px;
+  }
+
+  .text-content h1 {
+    font-size: 4.0625rem;
+  }
+
+  .header {
+    padding: 3.75rem 0 0 12.5rem;
+  }
+
+  .main {
+    padding: 0 12.5rem;
+    margin-top: 0;
+  }
+
+  .text-content {
+    text-align: left;
+  }
+
+  .text-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  input[type='email']::placeholder {
+    font-size: 1rem;
+  }
+
+  .btn-submit {
+    padding: 0.9375rem 2.5rem;
+  }
+
+  .error-icon {
+    right: 6.5625rem;
+  }
 }
